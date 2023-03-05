@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "D:\Projects\Github.com\go-ci-agent\tmp\scripts\29_json_to_yaml.py", line 16, in <module>
+    print(yaml.dump(yaml.load(converted_json_data), default_flow_style=False))
+TypeError: load() missing 1 required positional argument: 'Loader'
