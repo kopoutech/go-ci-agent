@@ -6,7 +6,8 @@ const (
 )
 
 type Source interface {
-	Download(string) (bool, error)
+	Download() (bool, error)
+	SetPath(string) string
 }
 
 type EnvVar struct {
@@ -21,11 +22,12 @@ type Artifact struct {
 }
 
 type Program struct {
-	Executable string
-	File       string
-	Args       []string
-	EnvVar     []EnvVar
-	Dir        string
+	Executable              string
+	File                    string
+	Args                    []string
+	EnvVar                  []EnvVar
+	Dir                     string // directory relative to source
+	baseExecutableDirectory string // base directory to be fetched from source
 }
 
 type Capture struct {
@@ -34,6 +36,7 @@ type Capture struct {
 	StdoutFile string // Used when Stdout is true
 	StderrFile string // Used when Stderr is true
 	Artifacts  []Artifact
+	Console    bool // Stream output to console
 }
 
 type Config struct {
