@@ -16,10 +16,10 @@ Unlike CI programs like Jenkins, CircleCI you need to write manifest file only o
 ## Supported Platforms
 
 - [x] Local
-- [] Remote Machine (SSH)
-- [] Local Docker
-- [] Local Podman
-- [] Kubernetes
+- [ ] Remote Machine (SSH)
+- [ ] Local Docker
+- [ ] Local Podman
+- [ ] Kubernetes
 
 
 Sample Go CI format 
