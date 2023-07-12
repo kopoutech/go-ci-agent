@@ -16,12 +16,14 @@ func TestProgram(t *testing.T) {
 
 	c := job.Capture{
 		Stdout:     true,
-		StdoutFile: "stdoutput",
+		StdoutFile: "stdoutput.io",
 	}
 
 	ctx := context.Background()
 	err := p.Execute(ctx, c)
 
-	log.Printf(err.Error())
+	if err != nil {
+		log.Printf(err.Error())
+	}
 
 }
